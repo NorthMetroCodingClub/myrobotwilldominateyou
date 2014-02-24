@@ -4,6 +4,11 @@ from base import BaseRobot
 
 class Robot(BaseRobot):
 
+    '''Bully Robot.
+    Identify and move towards the weakest enemy robot,
+    attacking any adjacent enemy robot along the way.
+    '''
+
     def act(self, game):
         enemies = self.enemies(game)
         weakest = self.weakest(enemies)

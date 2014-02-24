@@ -50,6 +50,22 @@ class BaseRobot(object):
         enemies = self.enemies(game)
         return self.weakest(enemies)
 
+    def strongest(self, robots):
+        '''Strongest.
+        Given a dictionary of robots, return a reference to
+        the strongest robot.
+        '''
+        strongest = None
+
+        for loc, robot in robots.iteritems():
+            if strongest is None:
+                strongest = robot
+                continue
+            if strongest.hp < robot.hp:
+                strongest = robot
+
+        return strongest
+
     def nearest(self, robots):
         nearest = None
         nearest_distance = None
