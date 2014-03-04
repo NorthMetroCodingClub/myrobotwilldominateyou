@@ -44,7 +44,7 @@ class Robot:
                 suicide_dmg_factor += x.hp
         suicide_dmg_factor -= self.hp
 
-        if nhostiles > 1 and suicide_dmg_factor > 0:
+        if (nhostiles > 1 and suicide_dmg_factor > 0) or (nhostiles>=1 and self.hp < rg.settings.suicide_damage):
             return ['suicide']
         elif nhostiles == 1:
             return ['attack',enemyadjslocs.pop()]
